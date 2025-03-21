@@ -27,12 +27,18 @@
     };
 
     sensors {
-        left_config {
+        // Left encoder node
+        left_encoder: left_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "Left Encoder";
             #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
 
-        right_config {
+        // Right encoder node
+        right_encoder: right_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "Right Encoder";
             #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
@@ -57,7 +63,12 @@
                  &kp LCTRL &kp LALT &kp LGUI  &mo LOWER  &kp SPACE    &kp RET   &mo RAISE  &kp RGUI  &kp RALT  &kp RCTRL
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp DOWN UP>;
+            sensor-bindings = <
+                // First pair is the left encoder, telling it which behavior to invoke
+                &left_encoder &inc_dec_kp RIGHT LEFT
+                // Second pair is the right encoder
+                &right_encoder &inc_dec_kp DOWN UP
+            >;
         };
 
         lower_layer {
@@ -76,7 +87,10 @@
                         &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans    &trans   &trans
             >;
 
-            sensor-bindings = <&mmv MOVE_RIGHT MOVE_LEFT &mmv MOVE_DOWN MOVE_UP>;
+            sensor-bindings = <
+                &left_encoder &mmv MOVE_RIGHT MOVE_LEFT
+                &right_encoder &mmv MOVE_DOWN MOVE_UP
+            >;
         };
 
 
@@ -97,7 +111,10 @@
               &trans    &trans      &trans    &trans     &trans             &trans  &trans    &trans   &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <
+                &left_encoder &inc_dec_kp C_VOL_UP C_VOL_DN
+                &right_encoder &inc_dec_kp PG_UP PG_DN
+            >;
         };
 
         adjust_layer {
