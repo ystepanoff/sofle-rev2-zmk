@@ -58,9 +58,9 @@
 
             sensor-bindings = <
                 // First pair is the left encoder, telling it which behavior to invoke
-                &my_left_enc &inc_dec_kp RIGHT LEFT
+                &inc_dec_kp RIGHT LEFT
                 // Second pair is the right encoder
-                &my_right_enc &inc_dec_kp DOWN UP
+                &inc_dec_kp DOWN UP
             >;
         };
 
@@ -102,8 +102,8 @@
             >;
 
             sensor-bindings = <
-                &my_left_enc &inc_dec_kp C_VOL_UP C_VOL_DN
-                &my_right_enc &inc_dec_kp PG_UP PG_DN
+                &inc_dec_kp C_VOL_UP C_VOL_DN
+                &inc_dec_kp PG_UP PG_DN
             >;
         };
 
