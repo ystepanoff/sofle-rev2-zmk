@@ -27,14 +27,18 @@
     };
 
     sensors {
-        // Left encoder node
-        left_encoder {
+        // Replace `left_encoder: left_encoder` with a new name
+        my_left_enc: left_enc {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "Left Encoder";
             #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
 
-        // Right encoder node
-        right_encoder {
+        // Similarly rename the right encoder if needed
+        my_right_enc: right_enc {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "Right Encoder";
             #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
@@ -61,9 +65,9 @@
 
             sensor-bindings = <
                 // First pair is the left encoder, telling it which behavior to invoke
-                &left_encoder &inc_dec_kp RIGHT LEFT
+                &my_left_enc &inc_dec_kp RIGHT LEFT
                 // Second pair is the right encoder
-                &right_encoder &inc_dec_kp DOWN UP
+                &my_right_enc &inc_dec_kp DOWN UP
             >;
         };
 
@@ -84,8 +88,8 @@
             >;
 
             sensor-bindings = <
-                &left_encoder &mmv MOVE_RIGHT MOVE_LEFT
-                &right_encoder &mmv MOVE_DOWN MOVE_UP
+                &my_left_enc &mmv MOVE_RIGHT MOVE_LEFT
+                &my_right_enc &mmv MOVE_DOWN MOVE_UP
             >;
         };
 
@@ -108,8 +112,8 @@
             >;
 
             sensor-bindings = <
-                &left_encoder &inc_dec_kp C_VOL_UP C_VOL_DN
-                &right_encoder &inc_dec_kp PG_UP PG_DN
+                &my_left_enc &inc_dec_kp C_VOL_UP C_VOL_DN
+                &my_right_enc &inc_dec_kp PG_UP PG_DN
             >;
         };
 
