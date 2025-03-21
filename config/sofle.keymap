@@ -29,11 +29,13 @@
     sensors {
         // Left encoder node
         left_encoder {
+            #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
 
         // Right encoder node
         right_encoder {
+            #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
     };
