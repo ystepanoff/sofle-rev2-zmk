@@ -27,16 +27,17 @@
     };
 
     sensors {
-         left_config {
-             triggers-per-rotation = <20>;
-         };
- 
-         right_config {
-             triggers-per-rotation = <20>;
-         };
+        left_config {
+            triggers-per-rotation = <20>;
+            #sensor-binding-cells = <2>;
+        };
+        right_config {
+            triggers-per-rotation = <20>;
+            #sensor-binding-cells = <2>;
+        };
      };
 
-     keymap {
+    keymap {
         compatible = "zmk,keymap";
 
         default_layer {
