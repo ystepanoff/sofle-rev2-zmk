@@ -29,14 +29,14 @@
     sensors {
         // Replace `left_encoder: left_encoder` with a new name
         my_left_enc: left_enc {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotary-encoder";
             #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
 
         // Similarly rename the right encoder if needed
         my_right_enc: right_enc {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotary-encoder";
             #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
