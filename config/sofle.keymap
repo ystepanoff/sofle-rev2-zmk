@@ -29,10 +29,12 @@
     sensors {
         compatible = "zmk,behavior-sensor-rotate";
         left_config {
+            #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
 
         right_config {
+            #sensor-binding-cells = <0>;
             triggers-per-rotation = <20>;
         };
     };
