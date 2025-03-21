@@ -26,6 +26,16 @@
         };
     };
 
+    sensors {
+        left_config {
+            triggers-per-rotation = <20>;
+        };
+
+        right_config {
+            triggers-per-rotation = <20>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -64,7 +74,7 @@
                         &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans    &trans   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp MOVE_RIGHT MOVE_LEFT &inc_dec_kp MOVE_DOWN MOVE_UP>;
+            sensor-bindings = <&mmv MOVE_RIGHT MOVE_LEFT &mmv MOVE_DOWN MOVE_UP>;
         };
 
 
