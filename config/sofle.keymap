@@ -28,18 +28,12 @@
 
     sensors {
         // Left encoder node
-        left_encoder: left_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "Left Encoder";
-            #sensor-binding-cells = <0>;
+        left_encoder {
             triggers-per-rotation = <20>;
         };
 
         // Right encoder node
-        right_encoder: right_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "Right Encoder";
-            #sensor-binding-cells = <0>;
+        right_encoder {
             triggers-per-rotation = <20>;
         };
     };
