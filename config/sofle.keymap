@@ -27,7 +27,7 @@
     };
 
     sensors {
-        compatible = "zmk,behavior-sensor-rotate"
+        compatible = "zmk,behavior-sensor-rotate";
         left_config {
             triggers-per-rotation = <20>;
         };
