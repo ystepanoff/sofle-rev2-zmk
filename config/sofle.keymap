@@ -27,11 +27,11 @@
     };
 
     sensors {
-        left_config {
+        left_encoder {
             triggers-per-rotation = <20>;
             #sensor-binding-cells = <2>;
         };
-        right_config {
+        right_encoder {
             triggers-per-rotation = <20>;
             #sensor-binding-cells = <2>;
         };
