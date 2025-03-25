@@ -28,11 +28,11 @@
 
     sensors {
         left_config {
-            triggers-per-rotation = <18>;
+            triggers-per-rotation = <20>;
         };
 
         right_config {
-            triggers-per-rotation = <24>;
+            triggers-per-rotation = <40>;
         };
     };
 
