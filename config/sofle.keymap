@@ -26,21 +26,15 @@
         };
     };
 
-    left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        steps = <40>;
-    };
-
-    right_encoder: encoder_right {
-        compatible = "alps,ec11";
-        steps = <40>;
-    };
-
     sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <20>;
-     };
+        left_config {
+            triggers-per-rotation = <18>;
+        };
+
+        right_config {
+            triggers-per-rotation = <24>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
