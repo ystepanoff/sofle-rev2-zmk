@@ -28,12 +28,12 @@
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        steps = <20>;
+        steps = <80>;
     };
 
     right_encoder: encoder_right {
         compatible = "alps,ec11";
-        steps = <20>;
+        steps = <80>;
     };
 
     sensors {
