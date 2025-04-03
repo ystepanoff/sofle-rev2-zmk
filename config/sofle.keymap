@@ -27,6 +27,18 @@
         };
     };
 
+    arrow_h_encoder: arrow_h_encoder {
+        compatible = "zmk,behavior-scroll-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&kp UP>, <&kp DOWN>;
+    }
+
+    arrow_v_encoder: arrow_v_encoder {
+        compatible = "zmk,behavior-scroll-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&kp UP>, <&kp DOWN>;
+    }
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -46,7 +58,7 @@
                  &kp LCTRL &kp LALT &kp LGUI  &mo LOWER  &kp SPACE    &kp RET   &mo RAISE  &kp RGUI  &kp RALT  &kp RCTRL
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT>;
+            sensor-bindings = <&arrow_h_encoder>, <&arrow_v_encoder>;
         };
 
         lower_layer {
