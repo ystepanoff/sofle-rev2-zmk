@@ -58,7 +58,7 @@
                  &kp LCTRL &kp LALT &kp LGUI  &mo LOWER  &kp SPACE    &kp RET   &mo RAISE  &kp RGUI  &kp RALT  &kp RCTRL
             >;
 
-            sensor-bindings = <&arrow_h_encoder>, <&arrow_v_encoder>;
+            sensor-bindings = <&arrow_h_encoder &arrow_v_encoder>;
         };
 
         lower_layer {
