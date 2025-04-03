@@ -31,13 +31,13 @@
         compatible = "zmk,behavior-scroll-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&kp UP>, <&kp DOWN>;
-    }
+    };
 
     arrow_v_encoder: arrow_v_encoder {
         compatible = "zmk,behavior-scroll-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&kp UP>, <&kp DOWN>;
-    }
+    };
 
     keymap {
         compatible = "zmk,keymap";
