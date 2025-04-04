@@ -55,6 +55,7 @@
             >;
 
             sensor-bindings = <&rot_kp LEFT RIGHT>, <&rot_kp UP DOWN>;
+        };
 
         lower_layer {
             display-name = "LOWR";
