@@ -19,10 +19,10 @@
 
 / {
     behaviors {
-        rot_kp: sensor_rotate_kp {
+        rot_mmv: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&mmv>, <&mmv>;
         };
     };
 
@@ -54,7 +54,7 @@
                  &kp LCTRL &kp LALT &kp LGUI  &mo LOWER  &kp SPACE    &kp RET   &mo RAISE  &kp RGUI  &kp RALT  &kp RCTRL
             >;
 
-            sensor-bindings = <&rot_kp LEFT RIGHT>, <&rot_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT>, <&inc_dec_kp UP DOWN>;
         };
 
         lower_layer {
@@ -66,17 +66,14 @@
 // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
 //                |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                  &trans    &trans    &trans   &trans    &trans  &trans
-&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                        &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
-&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                      &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &trans  &trans  &trans    &trans    &trans   &trans    &trans  &trans
-                        &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans    &trans   &trans
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                         &trans    &trans    &trans   &trans    &trans  &trans
+&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                               &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
+&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                             &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
+&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &mkp LCLK   &mkp RCLK  &trans    &trans    &trans   &trans    &trans  &trans
+                        &trans       &trans       &trans       &trans                    &trans     &trans    &trans    &trans   &trans    &trans
             >;
 
-            sensor-bindings = <
-                &inc_dec_kp C_VOL_UP C_VOL_DN
-                &inc_dec_kp PG_UP PG_DN
-            >;
+            sensor-bindings = <&rot_mmv MOVE_LEFT MOVE_RIGHT>, <&rot_mmv MOVE_UP MOVE_DOWN>;
         };
 
 
@@ -97,10 +94,7 @@
               &trans    &trans      &trans    &trans     &trans             &trans  &trans    &trans   &trans    &trans
             >;
 
-            sensor-bindings = <
-                &inc_dec_kp C_VOL_UP C_VOL_DN
-                &inc_dec_kp PG_UP PG_DN
-            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN> <&inc_dec_kp PG_UP PG_DN>;
         };
 
         adjust_layer {
