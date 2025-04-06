@@ -20,10 +20,10 @@
     behaviors {
         // Tap dance
         del_word: del_word {
-            compatible: "zmk,behavior-tap-dance";
-            #binding-cells: <0>;
-            tapping-term-ms: <200>;
-            bindings: <&mo LOWER>, <&kp LCTRL &kp BSPC>;
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo LOWER>, <&kp LCTRL &kp BSPC>;
         };
 
         // Mouse
