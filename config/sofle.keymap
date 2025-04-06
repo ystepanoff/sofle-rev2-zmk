@@ -27,10 +27,10 @@
         };
 
         // Mouse
-        rot_mmv: sensor_rotate_kp {
+        rot_mmv_horiz: rot_mmv_horiz {
             compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&mmv>, <&mmv>;
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
         };
     };
 
@@ -80,7 +80,7 @@
                         &trans       &trans       &trans       &trans                    &trans     &trans    &trans    &trans   &trans    &trans
             >;
 
-            sensor-bindings = <&rot_mmv MOVE_LEFT MOVE_RIGHT>, <&rot_mmv MOVE_UP MOVE_DOWN>;
+            sensor-bindings = <&rot_mmv_horiz>, <&rot_mmv_horiz>;
         };
 
 
