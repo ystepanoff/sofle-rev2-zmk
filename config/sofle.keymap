@@ -38,14 +38,14 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_LEFT>;
-            tap-ms = <25>;
+            tap-ms = <40>;
         };
 
         rot_mv: rot_mv {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
-            tap-ms = <25>;
+            tap-ms = <40>;
         };
     };
 
