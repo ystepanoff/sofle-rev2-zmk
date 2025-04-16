@@ -91,25 +91,31 @@
                 &kp LSHFT &kp Z  &kp X     &kp C    &kp D     &kp V      &kp C_MUTE   &none     &kp K      &kp H     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                                  &kp LCTRL &kp LALT &kp LGUI  &del_word  &kp SPACE    &kp RET   &mo RAISE  &kp RGUI  &kp RALT  &kp RCTRL
             >;
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
+            sensor-bindings = <
+                &inc_dec_kp LEFT RIGHT
+                &inc_dec_kp UP DOWN
+            >;
         };
 
         lower_layer {
             display-name = "LOWER";
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
+            // |       |      | PSCR |       |       |      |                | PGUP | HOME |   ^   | END  |  INS  |       |
             // | LLCK  | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
+            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |CMENU |      |       |      |       |       |
             //                |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
-                &bt BT_CLR     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                           &trans    &trans    &trans   &trans    &trans  &trans
-                &trans         &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                                 &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
-                &m_llck LOWER  &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                               &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
-                &trans         &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &mkp LCLK     &mkp RCLK  &trans    &trans    &trans   &trans    &trans  &trans
-                                            &trans       &trans       &trans       &trans        &trans        &trans     &trans    &trans    &trans   &trans
+                &bt BT_CLR     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                           &trans      &trans    &trans   &trans    &trans  &trans
+                &trans         &trans       &kp PSCRN    &trans       &trans       &trans                                 &kp PG_UP   &kp HOME  &kp UP   &kp END   &kp INS &trans
+                &m_llck LOWER  &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CAPS                               &kp PG_DN   &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
+                &trans         &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &mkp LCLK     &mkp RCLK  &kp K_CMENU &trans    &trans   &trans    &trans  &trans
+                                            &trans       &trans       &trans       &trans        &trans        &trans     &trans      &trans    &trans   &trans
             >;
-            sensor-bindings = <&rot_mh &rot_mv>;
+            sensor-bindings = <
+                &rot_mh
+                &rot_mv
+            >;
         };
 
 
@@ -128,7 +134,10 @@
                 &trans        &kp EQUAL &kp MINUS &kp PLUS  &kp LBRC  &kp RBKT  &kp C_MUTE    &trans  &kp RBKT  &kp RBRC &kp SEMI  &kp COLON &kp UNDER &kp BSLH
                                         &trans    &trans    &trans    &trans    &trans        &trans  &trans    &trans   &trans    &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <
+                &inc_dec_kp C_VOL_UP C_VOL_DN
+                &inc_dec_kp PG_UP PG_DN
+            >;
         };
 
         adjust_layer {
@@ -145,6 +154,10 @@
                 &m_llck ADJUST    &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                     &none &none &none &none &none &none
                 &none             &none           &none           &none           &none           &none            &rgb_ug RGB_TOG    &none &none &none &none &none &none &none
                                                   &none           &none           &none           &none            &none              &none &none &none &none &none
+            >;
+            sensor-bindings = <
+                &inc_dec_kp C_BRI_UP C_BRI_DN
+                &inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP
             >;
         };
     };
